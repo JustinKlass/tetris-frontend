@@ -1,3 +1,5 @@
+import axios from 'axios.js';
+
 const S_block = [
     [0, 0, 0],
     [0, 1, 1],
@@ -101,7 +103,7 @@ let high;
 const getHighscore = async() => {
     let a = document.querySelector('#res');
     if (high === undefined) {
-        let res = await axios.get('http://localhost:3000/scores')
+        let res = await axios.get('https://tetris-backend.herokuapp.com/scores')
         console.log(res)
         high = res.data[0].highScores
         // high = res.data[0].highScores
@@ -113,7 +115,7 @@ const getHighscore = async() => {
 }
 
 const post = async() => {
-    await axios.post('http://localhost:3000/scores', { highScores: 600})
+    await axios.post('https://tetris-backend.herokuapp.com/scores', { highScores: 600})
 }
 
 newGame = () => {
@@ -304,36 +306,36 @@ setup = () => {
     
     newBlock();
     
-    music = ["../audio/Tetris.mp3", "../audio/Role.mp3", "../audio/september.mp3"]
+    // music = ["../audio/Tetris.mp3", "../audio/Role.mp3", "../audio/september.mp3"]
 
-    audio0 = createAudio(music[0])
-    audio1 = createAudio(music[1])
-    audio2 = createAudio(music[2])
-    audio0.volume(0.1);
-    audio1.volume(0.1);
-    audio2.volume(0.1);
-    audio1.volume(0.1);
-    audio2.volume(0.1);
+    // audio0 = createAudio(music[0])
+    // audio1 = createAudio(music[1])
+    // audio2 = createAudio(music[2])
+    // audio0.volume(0.1);
+    // audio1.volume(0.1);
+    // audio2.volume(0.1);
+    // audio1.volume(0.1);
+    // audio2.volume(0.1);
     
     grav = setInterval( () => gravity(), 600);
     
-    rand = (Math.floor(Math.random() * music.length))
+    // rand = (Math.floor(Math.random() * music.length))
 }
 
 // P5 DRAW
 draw = () => {
 
-    if (mute === false) {
-        if(rand === 0) {
-            audio0.play();
-        }
-        else if(rand === 1) {
-            audio1.play();
-        }
-        else if(rand === 2) {
-            audio2.play();
-        }
-    }
+    // if (mute === false) {
+    //     if(rand === 0) {
+    //         audio0.play();
+    //     }
+    //     else if(rand === 1) {
+    //         audio1.play();
+    //     }
+    //     else if(rand === 2) {
+    //         audio2.play();
+    //     }
+    // }
 
     if (loss === true) {
         canvas.remove()
