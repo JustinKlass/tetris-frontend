@@ -1,0 +1,157 @@
+@font-face {
+    font-family: "Tetris";
+    src: url("../fonts/arcadeclassic.ttf");
+
+}
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Tetris';
+    background-image: linear-gradient(to bottom, #032262, #000C2F);
+    /* background-image: linear-gradient(to bottom, #4BA4FE, #0238CA); */
+    /* background-color: #2D3336; gray */
+    /* background-color: #3d3348; */
+}
+
+.tetris {
+    border: 0.3em double #D3D7CE;
+    box-shadow: 0 0 0.2em #D3D7CE;
+}
+
+.S, .Z, .T, .L, .J {
+    width: 45%;
+    height: 35%;
+}
+
+.O {
+    width: 30%;
+    height: 35%;
+}
+
+.I {
+    width: 55%;
+    height: 20%;
+}
+
+.next, .stats, .score, .rules, .submit, .gameOver {
+    color: #D3D7CE;
+    text-align: center;
+    background-color:#2D3336;
+    border: 0.3em double #D3D7CE;
+    box-shadow: 0 0 0.2em #D3D7CE;
+}
+
+.next p, .stats p, .score p, .rules p, .pause p, .gameOver p {
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    padding-top: 1.75%;
+}
+
+.pause {
+    color: #D3D7CE;
+    text-align: center;
+    background-color:#2D3336;
+    border: 0.3em double #D3D7CE;
+    box-shadow: 0 0 0.2em #D3D7CE;
+}
+
+.gameOver h1 {
+    margin-bottom: 60%;
+}
+
+#top {
+    margin-top: 80%;
+}
+
+.img {
+    width: 40%;
+    height: 8%;
+    margin-left: 10%;
+    margin-bottom: 4%;
+    display: inline-block;
+}
+
+.count {
+    width: 40%;
+    height: 7%;
+    display: inline-block;
+}
+
+.count p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+.stats_S, .stats_Z, .stats_T, .stats_L, .stats_J {
+    width: 50%;
+    height: 100%;
+}
+
+.stats_O {
+    width: 40%;
+    height: 100%;
+}
+
+.stats_I {
+    width: 55%;
+    height: 50%;
+
+}
+
+#small {
+    padding-top: 3%;
+    font-size: 1.2em;
+}
+
+#medium {
+    font-size: 1.7em;
+}
+
+#big {
+    margin-top: 1.5%;
+    margin-bottom: 2.5%;
+}
+
+#button {
+    border: none;
+    width: 100%;
+    height: 1.5em;
+    cursor: pointer;
+    font-size: 2em;
+    color: #D3D7CE;
+    line-height: 38px;
+    text-align: center;
+    white-space: nowrap;
+    font-family: 'Tetris';
+    letter-spacing: .1rem;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+#button:hover {
+    color: #2D3336;
+    background-color: #D3D7CE;
+}
+
+#button:focus {
+    outline: none;
+}
+
+#tetrisHeader {
+    font-size: 4em;
+    margin-top: 6%;
+    margin-bottom: 20%;
+}
+
+#gameOver {
+    font-size: 2.5em;
+    margin-bottom:20%;
+}
