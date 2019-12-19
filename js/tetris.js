@@ -85,25 +85,26 @@ const squareSize = 30;
 const leftEnd = 0;
 
 let pause = false;
-let loss = true;
-let mute = true;
+let loss = false;
+let mute = false;
 let newRandVal;
 let score = 0;
 let nextBlock;
 let platform;
 let nextImg;
-let high;
 let canvas;
 let square;
 let block;
 let grav;
+let high;
 
 const getHighscore = async() => {
     let a = document.querySelector('#res');
     if (high === undefined) {
         let res = await axios.get('http://localhost:3000/scores')
-        // console.log(res)
+        console.log(res)
         high = res.data[0].highScores
+        // high = res.data[0].highScores
         a.innerHTML = high
     }
     else {
@@ -112,8 +113,7 @@ const getHighscore = async() => {
 }
 
 const post = async() => {
-    await axios.post('http://localhost:3000/scores', { highScores: score})
-
+    await axios.post('http://localhost:3000/scores', { highScores: 600})
 }
 
 newGame = () => {
@@ -163,7 +163,7 @@ getNext = () => {
 }
 
 getSubmit = () => {
-    submit = createDiv(`<button id = 'button'>Submit Score</button>`).size((windowWidth / 10) * 2, windowHeight / 7);
+    submit = createDiv().size((windowWidth / 10) * 2, windowHeight / 7);
     submit.position(windowWidth - (windowWidth / 3.50), windowHeight / 1.22);
     submit.addClass('submit')
 }
@@ -294,27 +294,26 @@ gravity = () => {
 }
 // P5 SETUP
 setup = () => {
-// 93061
     canvas = createCanvas(300, 600); // 20
     canvas.class('tetris');
     canvas.position((windowWidth / 2) - (canvas.width / 2), windowHeight / 30);
     
     platform = new Platform();
 
-    newStats();
+    // newStats();
     
     newBlock();
     
     music = ["../audio/Tetris.mp3", "../audio/Role.mp3", "../audio/september.mp3"]
-    
+
     audio0 = createAudio(music[0])
     audio1 = createAudio(music[1])
     audio2 = createAudio(music[2])
     audio0.volume(0.1);
     audio1.volume(0.1);
     audio2.volume(0.1);
-    // audio1.volume(0.1);
-    // audio2.volume(0.1);
+    audio1.volume(0.1);
+    audio2.volume(0.1);
     
     grav = setInterval( () => gravity(), 600);
     
