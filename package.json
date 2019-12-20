@@ -2,7 +2,7 @@
   "name": "tetris-frontend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "tetris.js",
   "dependencies": {
     "axios": "^0.19.0"
   },
